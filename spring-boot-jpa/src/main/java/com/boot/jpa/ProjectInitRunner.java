@@ -19,8 +19,6 @@ public class ProjectInitRunner implements CommandLineRunner {
 	@Autowired
 	private ProjectRepository projectRepository;
 
-	
-
 	@Override
 	public void run(String... args) throws Exception {
 
