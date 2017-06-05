@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ProjectInitRunner implements CommandLineRunner {
 
-	private static final Logger logger = LoggerFactory.getLogger(SpringBootJpaApplication.class);
+	private static final Logger logger = LoggerFactory.getLogger(ProjectInitRunner.class);
 
 	@Autowired
 	private ProjectRepository projectRepository;
