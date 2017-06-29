@@ -58,7 +58,7 @@ public class SocialMediaSite {
         user.setSocialMediaSite( this );
     }
 
-    public void removePhone(User user) {
+    public void removeUser(User user) {
         users.remove( user );
         user.setSocialMediaSite(null );
     }

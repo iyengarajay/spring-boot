@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.boot.entity.SocialMediaSite;
 import com.boot.entity.User;
 
+
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class SocialMediaSiteEntityTest {
