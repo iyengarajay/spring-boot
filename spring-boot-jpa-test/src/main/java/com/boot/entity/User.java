@@ -1,5 +1,6 @@
 package com.boot.entity;
 
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,20 +18,20 @@ public class User {
 
 	private String lastName;
 
-	private String email;
+	@Convert(converter=EmailAddressConverter.class)
+	private EmailAddress email;
 
 	@ManyToOne
 	private SocialMediaSite socialMediaSite;
-	
-	
-	protected User(){
-		
+
+	protected User() {
+
 	}
-	
-	public User(String firstName, String lastName , String email){
-		this.firstName=firstName;
-		this.lastName=lastName;
-		this.email=email;
+
+	public User(String firstName, String lastName, EmailAddress email) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
 	}
 
 	public Long getId() {
@@ -53,11 +54,11 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getEmail() {
+	public EmailAddress getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
+	public void setEmail(EmailAddress email) {
 		this.email = email;
 	}
 
@@ -69,4 +70,27 @@ public class User {
 		this.socialMediaSite = socialMediaSite;
 	}
 
+	@Override
+	public int hashCode() {
+		return id == null ? 0 : id.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
+	
 }

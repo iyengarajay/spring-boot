@@ -22,17 +22,17 @@ public class SocialMediaSite {
 	private String name;
 
 	private String description;
-	
+
 	@OneToMany(mappedBy = "socialMediaSite", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<User> users = new ArrayList<>();
+	private List<User> users = new ArrayList<>();
 
 	protected SocialMediaSite() {
 
 	}
 
 	public SocialMediaSite(String name, String description) {
-		Assert.hasLength(name,"Social Media Site Name should not be empty");
-		Assert.hasLength(description,"Social Media Site Description should not be empty");
+		Assert.hasLength(name, "Social Media Site Name should not be empty");
+		Assert.hasLength(description, "Social Media Site Description should not be empty");
 		this.name = name;
 		this.description = description;
 	}
@@ -48,24 +48,26 @@ public class SocialMediaSite {
 	public String getDescription() {
 		return description;
 	}
-	
+
 	public List<User> getUsers() {
-        return users;
-    }
+		return users;
+	}
 
-    public void addUser(User user) {
-        users.add( user );
-        user.setSocialMediaSite( this );
-    }
+	public void addUser(User user) {
+		users.add(user);
+		user.setSocialMediaSite(this);
+	}
 
-    public void removeUser(User user) {
-        users.remove( user );
-        user.setSocialMediaSite(null );
-    }
+	public void removeUser(User user) {
+		users.remove(user);
+		user.setSocialMediaSite(null);
+	}
 
 	@Override
 	public String toString() {
 		return String.format("Social Media Site[name = '%s' , description  = '%s']", name, description);
 	}
+
+	
 
 }
