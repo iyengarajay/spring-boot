@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>spring-boot-jpa-test</name>
-	<description>Unit Testing Spring Boot JPA</description>
+	<description>Unit Testing JPA entities in a Spring Boot app</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
