@@ -18,7 +18,7 @@ public class User {
 
 	private String lastName;
 
-	@Convert(converter=EmailAddressConverter.class)
+	@Convert(converter = EmailAddressConverter.class)
 	private EmailAddress email;
 
 	@ManyToOne
@@ -92,5 +92,4 @@ public class User {
 		return true;
 	}
 
-	
 }

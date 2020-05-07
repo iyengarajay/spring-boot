@@ -68,6 +68,4 @@ public class SocialMediaSite {
 		return String.format("Social Media Site[name = '%s' , description  = '%s']", name, description);
 	}
 
-	
-
 }

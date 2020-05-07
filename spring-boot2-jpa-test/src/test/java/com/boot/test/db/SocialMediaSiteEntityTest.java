@@ -75,7 +75,7 @@ public class SocialMediaSiteEntityTest {
 		savedFaceBook.removeUser(secondUser);
 
 		var updatedData = this.entityManager.persistAndFlush(savedFaceBook);
-		
+
 		assertThat(updatedData.getUsers()).hasSize(1);
 		assertThat(updatedData.getUsers().get(0).getFirstName()).isEqualTo("Mar");
 

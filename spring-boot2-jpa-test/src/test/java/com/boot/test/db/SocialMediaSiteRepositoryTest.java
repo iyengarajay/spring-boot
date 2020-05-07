@@ -54,16 +54,15 @@ public class SocialMediaSiteRepositoryTest {
 
 		facebook = socialMediaSiteRepository.save(facebook);
 
-		
 		var site = socialMediaSiteRepository.findById(facebook.getId());
 		assertTrue(site.isPresent());
-		
+
 		// user added is not null
-		var users = site.get().getUsers(); 
+		var users = site.get().getUsers();
 		assertNotNull(users);
 
 		// check the one user we added.
-		assertEquals(users.size(),1);
+		assertEquals(users.size(), 1);
 
 	}
 

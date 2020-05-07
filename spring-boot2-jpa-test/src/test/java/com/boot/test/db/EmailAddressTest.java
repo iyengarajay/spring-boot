@@ -15,26 +15,26 @@ public class EmailAddressTest {
 	@Test
 	public void testShoulReturnValidEmail() {
 		EmailAddress email = new EmailAddress(testEmail);
-		assertEquals(email.emailAddress(),testEmail);
+		assertEquals(email.emailAddress(), testEmail);
 	}
 
 	@Test
 	public void testShouldReturnExceptionForInvalidEmailAddress() {
-		
+
 		var exception = assertThrows(IllegalArgumentException.class, () -> new EmailAddress("test@.com"));
 		assertEquals(exception.getMessage(), "Email Address is Invalid !");
 	}
 
 	@Test
 	public void testShouldReturnExceptionForBlankEmailAddress() {
-		
+
 		var exception = assertThrows(IllegalArgumentException.class, () -> new EmailAddress(" "));
 		assertEquals(exception.getMessage(), "Email Address is Invalid !");
 	}
 
 	@Test
 	public void testShouldReturnExceptionForNuullEmailAddress() {
-		
+
 		var exception = assertThrows(IllegalArgumentException.class, () -> new EmailAddress(null));
 		assertEquals(exception.getMessage(), "Email Address is Invalid !");
 	}
