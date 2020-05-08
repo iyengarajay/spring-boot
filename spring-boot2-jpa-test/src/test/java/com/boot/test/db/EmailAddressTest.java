@@ -19,21 +19,21 @@ public class EmailAddressTest {
 	}
 
 	@Test
-	public void testShouldReturnExceptionForInvalidEmailAddress() {
+	public void testShouldThrowExceptionForInvalidEmailAddress() {
 
 		var exception = assertThrows(IllegalArgumentException.class, () -> new EmailAddress("test@.com"));
 		assertEquals(exception.getMessage(), "Email Address is Invalid !");
 	}
 
 	@Test
-	public void testShouldReturnExceptionForBlankEmailAddress() {
+	public void testShouldThrowExceptionForBlankEmailAddress() {
 
 		var exception = assertThrows(IllegalArgumentException.class, () -> new EmailAddress(" "));
 		assertEquals(exception.getMessage(), "Email Address is Invalid !");
 	}
 
 	@Test
-	public void testShouldReturnExceptionForNuullEmailAddress() {
+	public void testShouldThrowExceptionForNullEmailAddress() {
 
 		var exception = assertThrows(IllegalArgumentException.class, () -> new EmailAddress(null));
 		assertEquals(exception.getMessage(), "Email Address is Invalid !");
